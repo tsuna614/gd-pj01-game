@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://boc8m0bof2bjw"]
+[gd_scene load_steps=3 format=4 uid="uid://boc8m0bof2bjw"]
 
 [ext_resource type="TileSet" uid="uid://dcaqtdvfufe8g" path="res://tilesets/game_tile_set.tres" id="1_mdxdo"]
+[ext_resource type="PackedScene" uid="uid://dmng0y6272h6c" path="res://scenes/characters/player/player.tscn" id="2_oiw2y"]
 
 [node name="TestSceneTileMap" type="Node2D"]
 
@@ -21,3 +22,6 @@ tile_set = ExtResource("1_mdxdo")
 [node name="Nature" type="TileMapLayer" parent="GameTileMap"]
 tile_map_data = PackedByteArray("AAALAAwAAwAAAAAAAAALAA4AAwAAAAIAAAALAA8AAwAAAAMAAAAMAAwAAwABAAAAAAAMAA4AAwABAAIAAAAMAA8AAwABAAMAAAANAA4AAwACAAIAAAANAA8AAwACAAMAAAAOAAwAAwADAAAAAAAOAA4AAwADAAIAAAAOAA8AAwADAAMAAAAPAA4AAwAEAAIAAAAPAA8AAwAEAAMAAAAQAAwAAwAFAAAAAAAQAA0AAwAFAAEAAAAQAA4AAwAFAAIAAAAQAA8AAwAFAAMAAAAQABAAAwAFAAQAAAARAAwAAwAGAAAAAAARAA0AAwAGAAEAAAARAA4AAwAGAAIAAAARAA8AAwAGAAMAAAARABAAAwAGAAQAAAASAAwAAwAHAAAAAAASAA0AAwAHAAEAAAASAA4AAwAHAAIAAAASAA8AAwAHAAMAAAASABAAAwAHAAQAAAATAAwAAwAIAAAAAAATAA0AAwAIAAEAAAATAA4AAwAIAAIAAAATABAAAwAIAAQAAAA=")
 tile_set = ExtResource("1_mdxdo")
+
+[node name="Player" parent="." instance=ExtResource("2_oiw2y")]
+position = Vector2(128, 192)
