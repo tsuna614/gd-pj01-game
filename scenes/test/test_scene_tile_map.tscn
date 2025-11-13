@@ -24,4 +24,4 @@ tile_map_data = PackedByteArray("AAALAAwAAwAAAAAAAAALAA4AAwAAAAIAAAALAA8AAwAAAAM
 tile_set = ExtResource("1_mdxdo")
 
 [node name="Player" parent="." instance=ExtResource("2_oiw2y")]
-position = Vector2(128, 192)
+position = Vector2(105, 199)
