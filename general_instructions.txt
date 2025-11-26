@@ -1,0 +1,8 @@
+1. LAYERS AND MASKS
+Think of it like radio channels:
+	- Layer = "What channel am I broadcasting on?"
+	- Mask = "What channels am I listening to?"
+
+Note:
+	- Some nodes like CollisionShape2D/3D doesn't have 
+layers and masks.

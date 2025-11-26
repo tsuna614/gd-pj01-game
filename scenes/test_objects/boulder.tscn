@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfuylgtn6yvnf"]
+
+[ext_resource type="TileSet" uid="uid://dutq4fyy628n4" path="res://tilesets/boulder.tres" id="1_qognx"]
+
+[node name="Boulder" type="Node2D"]
+
+[node name="Boulder" type="TileMapLayer" parent="."]
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 1, 0, 0, 0)
+tile_set = ExtResource("1_qognx")

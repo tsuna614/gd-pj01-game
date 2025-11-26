@@ -1,0 +1,14 @@
+1. What each Component does:
+	- HitComponent: Acts as hitbox for the attacker
+	- HurtComponent: Acts as hitbox for the one being attacked
+	- DamageComponent: 
+
+2. About Components' Error Message:
+
+You'll see the error message in the Components (Area2D),
+which is "This node has no shape, so it can't collide or
+interact with other objects. Consider adding..."
+
+However, we don't add a CollisionShape2D or anything similiar
+as a child, because we want these Components to be reusable
+and customizable for multiple objects. (1:38:05)
