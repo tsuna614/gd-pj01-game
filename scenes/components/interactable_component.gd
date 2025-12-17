@@ -8,9 +8,9 @@ signal interactable_deactivated
 # in this case it scan for nodes in layer 2, which is the player
 # when player enters, this signal is emitted.
 # This component can be seen used in objects such as Door
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	interactable_activated.emit()
 
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	interactable_deactivated.emit()

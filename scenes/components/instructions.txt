@@ -1,5 +1,5 @@
 1. What each Component does:
-	- HitComponent: Acts as hitbox for the attacker
+	- HitComponent: Acts as hitbox for the attacker's hit (sword's slash, axe's chop,...)
 	- HurtComponent: Acts as hitbox for the one being attacked
 	- DamageComponent: 
 

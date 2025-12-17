@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=4 uid="uid://dbm4g4t65731s"]
+[gd_scene load_steps=8 format=4 uid="uid://dbm4g4t65731s"]
 
 [ext_resource type="TileSet" uid="uid://dcaqtdvfufe8g" path="res://tilesets/game_tile_set.tres" id="1_8re64"]
 [ext_resource type="PackedScene" uid="uid://dmng0y6272h6c" path="res://scenes/characters/player/player.tscn" id="2_fr2vv"]
+[ext_resource type="PackedScene" uid="uid://df2b0was662vs" path="res://scenes/objects/trees/small_tree.tscn" id="2_mfhov"]
+[ext_resource type="PackedScene" uid="uid://2g2bxck1p8l0" path="res://scenes/objects/others/chest.tscn" id="3_7jlbu"]
+[ext_resource type="Shader" uid="uid://bs0nj1oyehxji" path="res://scenes/objects/trees/tree_shake.gdshader" id="3_15mpa"]
+[ext_resource type="PackedScene" uid="uid://4a5wgg4jitjk" path="res://scenes/objects/trees/big_tree.tscn" id="4_wy6ud"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uyla8"]
+resource_local_to_scene = true
+shader = ExtResource("3_15mpa")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
 
 [node name="TestSceneHouseTileMap" type="Node2D"]
 
@@ -20,13 +30,25 @@ tile_map_data = PackedByteArray("AAAJAA0AAgACAAIAAAAJAAwAAgACAAEAAAAJAAsAAgACAAE
 tile_set = ExtResource("1_8re64")
 
 [node name="Nature" type="TileMapLayer" parent="GameTileMap"]
-tile_map_data = PackedByteArray("AAALAAwAAwAAAAAAAAALAA4AAwAAAAIAAAALAA8AAwAAAAMAAAAMAAwAAwABAAAAAAAMAA4AAwABAAIAAAAMAA8AAwABAAMAAAANAA4AAwACAAIAAAANAA8AAwACAAMAAAAOAAwAAwADAAAAAAAOAA4AAwADAAIAAAAOAA8AAwADAAMAAAAPAA4AAwAEAAIAAAAPAA8AAwAEAAMAAAAQAAwAAwAFAAAAAAAQAA0AAwAFAAEAAAAQAA4AAwAFAAIAAAAQAA8AAwAFAAMAAAAQABAAAwAFAAQAAAARAAwAAwAGAAAAAAARAA0AAwAGAAEAAAARAA4AAwAGAAIAAAARAA8AAwAGAAMAAAARABAAAwAGAAQAAAASAAwAAwAHAAAAAAASAA0AAwAHAAEAAAASAA4AAwAHAAIAAAASAA8AAwAHAAMAAAASABAAAwAHAAQAAAATAAwAAwAIAAAAAAATAA0AAwAIAAEAAAATAA4AAwAIAAIAAAATABAAAwAIAAQAAAA=")
+position = Vector2(11, 8)
+tile_map_data = PackedByteArray("AAALAAwAAwAAAAAAAAALAA4AAwAAAAIAAAALAA8AAwAAAAMAAAAMAAwAAwABAAAAAAAMAA4AAwABAAIAAAAMAA8AAwABAAMAAAANAA4AAwACAAIAAAANAA8AAwACAAMAAAAOAAwAAwADAAAAAAAOAA4AAwADAAIAAAAOAA8AAwADAAMAAAAPAA4AAwAEAAIAAAAPAA8AAwAEAAMAAAAQAAwAAwAFAAAAAAAQAA0AAwAFAAEAAAAQAA4AAwAFAAIAAAAQAA8AAwAFAAMAAAAQABAAAwAFAAQAAAARAAwAAwAGAAAAAAARAA0AAwAGAAEAAAARAA4AAwAGAAIAAAARAA8AAwAGAAMAAAARABAAAwAGAAQAAAASAAwAAwAHAAAAAAASAA0AAwAHAAEAAAASAA4AAwAHAAIAAAASAA8AAwAHAAMAAAASABAAAwAHAAQAAAATAAwAAwAIAAAAAAATAA0AAwAIAAEAAAATAA4AAwAIAAIAAAATABAAAwAIAAQAAAAMABIABAAAAAAABQANAAoABAAAAAAACAAMAAoABAAAAAAACAAMAAkABAAAAAAACAANAAkABAAAAAAACAAOAAoABAAAAAAACAAOAAkABAAAAAAACAAHAAwABAAAAAAACAA=")
 tile_set = ExtResource("1_8re64")
 
 [node name="Houses" type="TileMapLayer" parent="GameTileMap"]
-tile_map_data = PackedByteArray("AAANAAMABAAAAAAAAQAaAAUABAAAAAAAAgAJAAkABAAAAAAABAALAAkABAAAAAAABAAKAAYABAAAAAAABAANAAcABAAAAAAABAAHAAcABAAAAAAABAA=")
+position = Vector2(0, -4)
+tile_map_data = PackedByteArray("AAANAAMABAAAAAAAAQAaAAUABAAAAAAAAgAJAAkABAAAAAAABAALAAkABAAAAAAABAAKAAYABAAAAAAABAANAAcABAAAAAAABAAHAAcABAAAAAAABAATAAoABAAAAAAABgAXAAcABAAAAAAABgAYAAoABAAAAAAABgAWAAwABAAAAAAABgAZAAwABAAAAAAABgAaAA0ABAAAAAAABgA=")
 tile_set = ExtResource("1_8re64")
+
+[node name="SmallTree" parent="GameTileMap" instance=ExtResource("2_mfhov")]
+material = SubResource("ShaderMaterial_uyla8")
+position = Vector2(89, 159)
 
 [node name="Player" parent="." instance=ExtResource("2_fr2vv")]
 y_sort_enabled = true
-position = Vector2(105, 199)
+position = Vector2(104, 207)
+
+[node name="Chest" parent="." instance=ExtResource("3_7jlbu")]
+position = Vector2(261, 136)
+
+[node name="BigTree" parent="." instance=ExtResource("4_wy6ud")]
+position = Vector2(146, 219)
