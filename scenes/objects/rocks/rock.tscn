@@ -1,9 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwcqdeqg2myun"]
+[gd_scene load_steps=10 format=3 uid="uid://bwcqdeqg2myun"]
 
 [ext_resource type="Texture2D" uid="uid://o2nrs4lxpydc" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_70ahf"]
 [ext_resource type="Script" uid="uid://dk5ffsppmgnk0" path="res://scenes/objects/rocks/rock.gd" id="1_f5itc"]
 [ext_resource type="PackedScene" uid="uid://iw6ss4ln5i0p" path="res://scenes/components/hurt_component.tscn" id="2_aw33s"]
+[ext_resource type="Shader" uid="uid://bs0nj1oyehxji" path="res://scenes/objects/shake.gdshader" id="2_bntui"]
 [ext_resource type="PackedScene" uid="uid://cm13othmsv8y2" path="res://scenes/components/damage_component.tscn" id="3_msy0l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8i8v8"]
+resource_local_to_scene = true
+shader = ExtResource("2_bntui")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 40.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aw33s"]
 atlas = ExtResource("1_70ahf")
@@ -19,17 +26,20 @@ radius = 6.5
 script = ExtResource("1_f5itc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8i8v8")
 texture = SubResource("AtlasTexture_aw33s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 shape = SubResource("CircleShape2D_f5itc")
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_aw33s")]
 tool = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+visible = false
 shape = SubResource("CircleShape2D_bntui")
 debug_color = Color(0.7351373, 0.3509249, 0.7970375, 0.41960785)
 

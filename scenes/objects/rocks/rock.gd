@@ -14,6 +14,12 @@ func _ready() -> void:
 
 func on_hurt(hit_damage: int) -> void:
 	damage_component.apply_damage(hit_damage)
+	
+	print("Starts shaking tree")
+	sprite_2d.material.set_shader_parameter("shake_intensity", 0.2)
+	await get_tree().create_timer(0.2).timeout
+	sprite_2d.material.set_shader_parameter("shake_intensity", 0.0)
+	print("Stops shaking tree")
 
 func on_max_damage_reached() -> void:
 	call_deferred("add_stone")

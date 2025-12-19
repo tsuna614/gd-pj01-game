@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dmng0y6272h6c" path="res://scenes/characters/player/player.tscn" id="2_fr2vv"]
 [ext_resource type="PackedScene" uid="uid://df2b0was662vs" path="res://scenes/objects/trees/small_tree.tscn" id="2_mfhov"]
 [ext_resource type="PackedScene" uid="uid://2g2bxck1p8l0" path="res://scenes/objects/others/chest.tscn" id="3_7jlbu"]
-[ext_resource type="Shader" uid="uid://bs0nj1oyehxji" path="res://scenes/objects/trees/tree_shake.gdshader" id="3_15mpa"]
+[ext_resource type="Shader" uid="uid://bs0nj1oyehxji" path="res://scenes/objects/shake.gdshader" id="3_15mpa"]
 [ext_resource type="PackedScene" uid="uid://4a5wgg4jitjk" path="res://scenes/objects/trees/big_tree.tscn" id="4_wy6ud"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uyla8"]

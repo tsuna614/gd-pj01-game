@@ -34,6 +34,8 @@ func _on_enter() -> void:
 		animated_sprite_2d.play("chopping_right")
 	else:
 		animated_sprite_2d.play("chopping_front")
+		
+	await get_tree().create_timer(0.3).timeout
 	hit_component_collision_shape.disabled = false
 
 
