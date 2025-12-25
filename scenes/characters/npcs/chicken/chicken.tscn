@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnmk3kef24d8k"]
+
+[ext_resource type="Texture2D" uid="uid://dp0ljtdgrqr8k" path="res://assets/game/characters/chicken_sprites.png" id="1_rqcdy"]
+[ext_resource type="Script" uid="uid://ts6w1rrej2q3" path="res://scripts/state_machine/node_state_machine.gd" id="2_07wor"]
+[ext_resource type="Script" uid="uid://bhq2qyqg55e72" path="res://scenes/characters/npcs/chicken/idle_state.gd" id="3_x5c0g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07wor"]
+atlas = ExtResource("1_rqcdy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5c0g"]
+atlas = ExtResource("1_rqcdy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwrd3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07wor")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_x5c0g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 0.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xg57e"]
+radius = 4.0
+
+[node name="Chicken" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_wwrd3")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5842291
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_xg57e")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_07wor")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+script = ExtResource("3_x5c0g")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")

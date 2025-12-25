@@ -449,6 +449,7 @@ player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="HitComponent" parent="." instance=ExtResource("10_3xnwo")]
 collision_mask = 16
