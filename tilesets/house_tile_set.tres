@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://byn5g2l6gfsd2"]
+[gd_resource type="TileSet" format=3 uid="uid://byn5g2l6gfsd2"]
 
 [ext_resource type="Texture2D" uid="uid://bvigbp0ldbigu" path="res://assets/game/tilesets/wooden_house_walls_tileset.png" id="1_uaqb7"]
 [ext_resource type="Texture2D" uid="uid://bl3w57toe8ybi" path="res://assets/game/objects/basic_furniture.png" id="2_yxgbh"]

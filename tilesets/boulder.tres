@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dutq4fyy628n4"]
+[gd_resource type="TileSet" format=3 uid="uid://dutq4fyy628n4"]
 
 [ext_resource type="Texture2D" uid="uid://o2nrs4lxpydc" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_483ac"]
 
